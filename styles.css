@@ -1,0 +1,318 @@
+/* --- Global Reset & Variables --- */
+:root {
+    --primary: #2563eb;       /* Modern Blue */
+    --secondary: #1e293b;     /* Dark Slate */
+    --accent: #3b82f6;        /* Lighter Blue */
+    --bg-light: #f8fafc;      /* Very Light Grey */
+    --text-main: #334155;     /* Slate Text */
+    --text-light: #64748b;    /* Muted Text */
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* --- Navigation --- */
+.navbar {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e2e8f0;
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--secondary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-weight: 500;
+    color: var(--text-main);
+    transition: var(--transition);
+}
+
+.nav-links a:hover { color: var(--primary); }
+
+/* --- Hero Section --- */
+.hero {
+    text-align: center;
+    padding: 6rem 20px;
+    background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
+}
+
+.profile-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid var(--white);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+    object-fit: cover;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.social-links {
+    margin-bottom: 2rem;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    margin: 0 10px;
+    color: var(--text-main);
+    transition: var(--transition);
+}
+
+.social-links a:hover { color: var(--primary); transform: translateY(-3px); }
+
+/* --- Buttons --- */
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary);
+    transform: translateY(-2px);
+}
+
+/* --- Layout Utilities --- */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding { padding: 4rem 0; }
+.bg-light { background-color: var(--bg-light); }
+.bg-dark { background-color: var(--secondary); }
+.text-white { color: var(--white); }
+.mt-3 { margin-top: 1.5rem; }
+
+.section-title {
+    font-size: 2rem;
+    color: var(--secondary);
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* --- Timeline (Experience) --- */
+.timeline {
+    border-left: 3px solid #e2e8f0;
+    margin-left: 20px;
+    padding-left: 2rem;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.timeline-dot {
+    width: 16px;
+    height: 16px;
+    background: var(--primary);
+    border-radius: 50%;
+    position: absolute;
+    left: -41px;
+    top: 5px;
+    border: 3px solid var(--white);
+}
+
+.timeline-content h3 { font-size: 1.25rem; color: var(--secondary); }
+.timeline-content .company { display: block; font-weight: 600; color: var(--primary); }
+.timeline-content .date { font-size: 0.9rem; color: var(--text-light); display: block; margin-bottom: 0.5rem; }
+
+/* --- Cards (Projects) --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+}
+
+.card-body { padding: 1.5rem; }
+
+.card-body h3 {
+    margin-bottom: 0.5rem;
+    color: var(--secondary);
+}
+
+.tech-stack {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-stack span {
+    background: #eff6ff;
+    color: var(--primary);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.btn-text {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.btn-text:hover { text-decoration: underline; }
+
+/* --- Skills --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category h3 { margin-bottom: 1rem; color: var(--secondary); }
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.badges span {
+    background: var(--white);
+    border: 1px solid #cbd5e1;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #0f172a;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+/* --- Animation Classes --- */
+.animated {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animated.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Hide nav on mobile for simplicity */
+    .hero h1 { font-size: 2rem; }
+    .grid-container { grid-template-columns: 1fr; }
+}
+
+
+/* --- Certificate Card Additions --- */
+.card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; /* Ensures the image covers the area nicely */
+    object-position: top center; /* Focuses on the top part (usually titles) */
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.cert-issuer {
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.2rem;
+    font-size: 0.95rem;
+}
+
+.cert-date {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    display: block;
+}
+
+/* --- Fix for Dark Section Titles --- */
+.section-title.text-white {
+    color: var(--white);
+}
+
+.section-title.text-white::after {
+    background: var(--white); /* Optional: Makes the underline white too if you want */
+}
