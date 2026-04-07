@@ -7,6 +7,100 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Resume Buttons */
+        .btn-secondary {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: transparent;
+            color: #007bff; 
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-left: 10px;
+        }
+        .btn-secondary:hover {
+            background-color: #007bff;
+            color: white;
+        }
+        
+        /* Certificate Modal (Lightbox) */
+        .cert-card {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.8); 
+            backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto; 
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 700px;
+            position: relative;
+            animation: zoomIn 0.3s ease;
+        }
+        .modal-content img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        .close-btn:hover, .close-btn:focus {
+            color: #000;
+            text-decoration: none;
+        }
+        @keyframes zoomIn {
+            from {transform: scale(0.9); opacity: 0;}
+            to {transform: scale(1); opacity: 1;}
+        }
+        
+        /* Contact Section Social Links */
+        .contact-socials {
+            margin-top: 30px;
+        }
+        .contact-link {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            margin: 0 15px;
+        }
+        .contact-link:hover {
+            color: #fff;
+        }
+        .contact-divider {
+            color: #666;
+            margin: 0 5px;
+        }
+    </style>
 </head>
 <body>
 
@@ -15,9 +109,11 @@
             <a href="#" class="logo">Harsh Verma</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
+                <li><a href="#resume">Resume</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#certificates">Certificates</a></li> <li><a href="#skills">Skills</a></li>
+                <li><a href="#certificates">Certificates</a></li> 
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -37,10 +133,36 @@
         </div>
     </header>
 
+    <section id="resume" class="section-padding bg-light">
+        <div class="container animated text-center">
+            <h2 class="section-title">My Resume</h2>
+            <p style="margin-bottom: 20px; color: #555;">Get a comprehensive overview of my skills, experience, and educational background.</p>
+            <div class="resume-actions mt-3">
+                <a href="Harsh_Verma_Resume.pdf" target="_blank" class="btn-primary"><i class="fas fa-eye"></i> View Resume</a>
+                <a href="Harsh_Verma_Resume.pdf" download class="btn-secondary"><i class="fas fa-download"></i> Download PDF</a>
+            </div>
+        </div>
+    </section>
+
     <section id="experience" class="section-padding">
         <div class="container animated">
             <h2 class="section-title">Work Experience</h2>
             <div class="timeline">
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Full Stack Development Intern</h3>
+                        <span class="company">Dreamatrix Projects OPC</span>
+                        <span class="date">Jan 8, 2026 – Apr 8, 2026</span>
+                        <p>
+                            • Designed and developed scalable full-stack web applications.<br>
+                            • Collaborated with cross-functional teams to implement new features and improve UI/UX.<br>
+                            • Optimized application performance and maintained code quality through robust testing.
+                        </p>
+                    </div>
+                </div>
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
@@ -69,6 +191,15 @@
                         <p class="tech-stack"><span>HTML/CSS</span> <span>Node.js</span> <span>Firebase</span> <span>AWS S3</span></p>
                         <p>A full-stack e-commerce platform for diecast collectors. Features dynamic filtering, Google Auth, lightbox gallery, and real-time inventory management via Firebase.</p>
                         <a href="https://thediecastnetwork.web.app/" target="_blank" class="btn-text">Visit Website <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Dreamatrix Projects OPC</h3>
+                        <p class="tech-stack"><span>HTML/CSS</span> <span>JavaScript</span> <span>Firebase</span></p>
+                        <p>A professional, fully responsive digital business platform. Features smooth UI animations, SEO optimization, and reliable cloud hosting via Firebase to expand digital presence.</p>
+                        <a href="https://dreamatrixopc.in" target="_blank" class="btn-text">Visit Website <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -106,9 +237,19 @@
     <section id="certificates" class="section-padding">
         <div class="container animated">
             <h2 class="section-title">Certifications</h2>
+            <p class="text-center" style="margin-bottom: 30px; color: #666;">Click on any certificate to view details.</p>
             <div class="grid-container">
                 
-                <div class="card">
+                <div class="card cert-card" onclick="openModal('Hs7YQmdG.jpg', 'Google Cloud Career Launchpad - Cloud Engineer', 'Google Cloud', 'Successfully completed all the courses and labs in the Google Cloud Career Launchpad Cloud Engineer track.')">
+                    <img src="Hs7YQmdG.jpg" alt="Google Cloud Career Launchpad" class="card-img">
+                    <div class="card-body">
+                        <h3>Google Cloud Career Launchpad</h3>
+                        <p class="cert-issuer">Google Cloud</p>
+                        <span class="cert-date">Mar 2026</span>
+                    </div>
+                </div>
+
+                <div class="card cert-card" onclick="openModal('UC-20e0ec6b-db3e-427b-a175-ef9115422264.jpg', 'Java Programming Masterclass', 'Udemy (Abdul Bari)', 'Comprehensive course covering core Java concepts, Object-Oriented Programming (OOP) principles, multithreading, and advanced programming techniques.')">
                     <img src="UC-20e0ec6b-db3e-427b-a175-ef9115422264.jpg" alt="Java Certificate" class="card-img">
                     <div class="card-body">
                         <h3>Java Programming Masterclass</h3>
@@ -117,7 +258,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card cert-card" onclick="openModal('Cloud Computing-1.png', 'Cloud Computing', 'NPTEL (IIT Kharagpur)', 'In-depth study of cloud architectures, virtualization, resource management, and deployment models provided by IIT Kharagpur.')">
                     <img src="Cloud Computing-1.png" alt="Cloud Computing" class="card-img">
                     <div class="card-body">
                         <h3>Cloud Computing</h3>
@@ -126,7 +267,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card cert-card" onclick="openModal('HARSH VERMA -GSCJUJSF9F049.jpg', 'Google Cloud Study Jam', 'Google Developer Student Clubs', 'Hands-on labs and foundational training in Google Cloud Platform infrastructure and Generative AI concepts.')">
                     <img src="HARSH VERMA -GSCJUJSF9F049.jpg" alt="Google Cloud" class="card-img">
                     <div class="card-body">
                         <h3>Google Cloud Study Jam</h3>
@@ -135,7 +276,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card cert-card" onclick="openModal('Privacy And Security In Online Social Media-1.png', 'Privacy & Security in Social Media', 'NPTEL (IIIT Hyderabad)', 'Exploration of data privacy, security threats, malicious behaviors, and protective measures in modern social media networks.')">
                     <img src="Privacy And Security In Online Social Media-1.png" alt="Privacy Security" class="card-img">
                     <div class="card-body">
                         <h3>Privacy & Security in Social Media</h3>
@@ -144,7 +285,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card cert-card" onclick="openModal('The Joy of Computing using Python.jpg', 'The Joy of Computing using Python', 'NPTEL (IIT Madras)', 'Fundamental to advanced Python programming, focusing on problem-solving, data structures, and algorithmic thinking.')">
                     <img src="The Joy of Computing using Python.jpg" alt="Python Certificate" class="card-img">
                     <div class="card-body">
                         <h3>The Joy of Computing using Python</h3>
@@ -156,6 +297,16 @@
             </div>
         </div>
     </section>
+
+    <div id="certModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <img id="modalImg" src="" alt="Certificate View">
+            <h2 id="modalTitle" style="margin-bottom: 5px;"></h2>
+            <p id="modalIssuer" style="color: #666; font-weight: bold; margin-bottom: 15px;"></p>
+            <p id="modalDesc" style="line-height: 1.6;"></p>
+        </div>
+    </div>
 
     <section id="skills" class="section-padding bg-light">
         <div class="container animated">
@@ -188,13 +339,55 @@
             <h2 class="section-title text-white">Let's Connect</h2>
             <p class="text-white">I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
             <a href="mailto:harshvermajpr1@gmail.com" class="btn-primary mt-3">Say Hello</a>
+            
+            <div class="contact-socials">
+                <a href="https://github.com/harshverma724" target="_blank" class="contact-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <span class="contact-divider">|</span>
+                <a href="https://www.linkedin.com/in/harsh-verma-346495208/" target="_blank" class="contact-link">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <p>© 2026 Harsh Verma. Built with simple code.</p>
+    <footer style="text-align: center; padding: 20px;">
+        <p style="color: #666; margin: 0;">© 2026 Harsh Verma. Built with simple code.</p>
     </footer>
 
     <script src="script.js"></script>
+    
+    <script>
+        var modal = document.getElementById("certModal");
+        var modalImg = document.getElementById("modalImg");
+        var modalTitle = document.getElementById("modalTitle");
+        var modalIssuer = document.getElementById("modalIssuer");
+        var modalDesc = document.getElementById("modalDesc");
+
+        function openModal(imgSrc, title, issuer, description) {
+            modal.style.display = "block";
+            modalImg.src = imgSrc;
+            modalTitle.innerText = title;
+            modalIssuer.innerText = issuer;
+            modalDesc.innerText = description;
+            
+            // Prevent background scrolling when modal is open
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+            // Restore background scrolling
+            document.body.style.overflow = "auto";
+        }
+
+        // Close modal if user clicks outside of the modal content
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>
